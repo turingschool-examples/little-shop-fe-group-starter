@@ -98,10 +98,35 @@ form {
 .submit-merchant-edits,
 .edit-merchant,
 .view-merchant-items {
-  padding: 5px;
+  padding: 3px;
+  border-width: 1px;
   margin-right: 10px;
+  border-radius: 20px;
   cursor: pointer;
 }
+
+.submit:active,
+.delete-merchant:active,
+.add-new-button:active,
+.discard-merchant-edits:active,
+.submit-merchant-edits:active,
+.edit-merchant:active,
+.view-merchant-items:active{
+  transform: scale(0.95);
+}
+
+.submit:hover,
+.delete-merchant:hover,
+.add-new-button:hover,
+.discard-merchant-edits:hover,
+.submit-merchant-edits:hover,
+.edit-merchant:hover,
+.view-merchant-items:hover{
+  border-color: rgb(179, 167, 255);
+  outline: 1px solid black;
+  outline-offset: 1px;
+}
+
 
 .merchant-name {
   padding-left: 10px;
