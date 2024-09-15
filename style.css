@@ -51,6 +51,7 @@ nav > button {
   text-align: center;
   border-radius: 10px 0px 0px 10px;
   padding: 20px;
+  cursor: pointer;
 }
 
 .active-nav {
@@ -90,9 +91,16 @@ form {
   align-items: center;
 }
 
-.view-items-button {
+.submit,
+.delete-merchant,
+.add-new-button,
+.discard-merchant-edits,
+.submit-merchant-edits,
+.edit-merchant,
+.view-merchant-items {
   padding: 5px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .merchant-name {
@@ -127,4 +135,4 @@ form {
   display: none;
 } 
   
-co
+/* co */
