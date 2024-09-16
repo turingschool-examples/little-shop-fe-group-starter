@@ -235,6 +235,10 @@ function addRemoveActiveNav(nav1, nav2) {
 }
 
 function filterByMerchant(merchantId) {
+  // const specificMerchantItems = items.filter((item) => {
+  //   return 
+  // });
+  // return specificMerchantItems
   const specificMerchantItems = []
 
   for (let i = 0; i < items.length; i++) {
