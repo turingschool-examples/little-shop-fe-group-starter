@@ -78,7 +78,6 @@ nav > button:hover,
   color: #ffffff; 
 }
 
-.item:hover,
 .merchant:hover
 {
   background-color: #f6b696; 
@@ -189,7 +188,7 @@ form {
 
 /* ITEMS SECTION*/
 
-#items-view {
+.items-view {
   background-color: #bbe4e9;
   padding: 20px;
   border: 5px solid #ccc;
