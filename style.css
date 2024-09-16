@@ -18,13 +18,13 @@ body {
 aside {
   width: 25%;
   margin: none;
-  background-color:rgba(0, 128, 0, 0.3);
+  background-color: #53a8b6;
 }
 
 header {
   text-align: center;
   margin: 10px 10px 80px 10px;
-  background-color:rgba(0, 128, 0, 0.6);
+  background-color: #5585b5;
   color: white;
   padding: 15px;
 }
@@ -47,7 +47,7 @@ nav {
 nav > button {
   border: none;
   margin-bottom: 20px;
-  background-color: gray;
+  background-color: #a2a2a3;
   width: 65%;
   text-align: center;
   border-radius: 3rem 0 0 3rem;
@@ -79,7 +79,7 @@ form {
 .item,
 .merchant {
   display: flex;
-  background-color: lightgray;
+  background-color: #bbe4e9;
   margin: 10px;
   padding: 5px;
 }
@@ -164,9 +164,10 @@ form {
 /* ITEMS SECTION*/
 
 #items-view {
-  background-color: lightblue;
+  background-color: #bbe4e9;
   padding: 20px;
   border: 5px solid #ccc;
+  border-radius: 20px;
   display: flex;           
   flex-wrap: wrap;         
   gap: 10px;
@@ -177,11 +178,11 @@ form {
   flex: 1 1 300px;           
   max-width: 350px;         
   min-width: 200px;
-  background-color: lightgray;
+  background-color: #79c2d0;
   margin: 10px;
   padding: 20px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 /* HIDDEN ELEMENTS */
