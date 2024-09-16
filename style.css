@@ -74,14 +74,14 @@ nav > button:hover,
 .edit-merchant:hover,
 .view-merchant-items:hover {
   animation: pulse 1s infinite;
-  background-color: #ff9966; /* New background color */
-  color: #ffffff; /* Optional: Change text color */
+  background-color: #f6b696; 
+  color: #ffffff; 
 }
 
 .item:hover,
 .merchant:hover
 {
-  background-color: #ff9966; /* New background color */
+  background-color: #f6b696; 
 }
 
 aside, header, .item, main {
