@@ -18,12 +18,13 @@ body {
 aside {
   width: 25%;
   margin: none;
+  background-color: #53a8b6;
 }
 
 header {
   text-align: center;
   margin: 10px 10px 80px 10px;
-  background-color: black;
+  background-color: #5585b5;
   color: white;
   padding: 15px;
 }
@@ -43,13 +44,19 @@ nav {
   align-items: end;
 }
 
+
 nav > button {
   border: none;
   margin-bottom: 20px;
-  background-color: gray;
+  background-color: #a2a2a3;
   width: 65%;
   text-align: center;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 3rem 0 0 3rem;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 3rem;
+
   padding: 20px;
   cursor: pointer;
 }
@@ -73,7 +80,7 @@ form {
 .item,
 .merchant {
   display: flex;
-  background-color: lightgray;
+  background-color: #bbe4e9;
   margin: 10px;
   padding: 5px;
 }
@@ -98,10 +105,35 @@ form {
 .submit-merchant-edits,
 .edit-merchant,
 .view-merchant-items {
-  padding: 5px;
+  padding: 3px;
+  border-width: 1px;
   margin-right: 10px;
+  border-radius: 20px;
   cursor: pointer;
 }
+
+.submit:active,
+.delete-merchant:active,
+.add-new-button:active,
+.discard-merchant-edits:active,
+.submit-merchant-edits:active,
+.edit-merchant:active,
+.view-merchant-items:active{
+  transform: scale(0.95);
+}
+
+.submit:hover,
+.delete-merchant:hover,
+.add-new-button:hover,
+.discard-merchant-edits:hover,
+.submit-merchant-edits:hover,
+.edit-merchant:hover,
+.view-merchant-items:hover{
+  border-color: rgb(179, 167, 255);
+  outline: 1px solid black;
+  outline-offset: 1px;
+}
+
 
 .merchant-name {
   padding-left: 10px;
@@ -127,6 +159,31 @@ form {
 
 .fail {
   color: red;
+}
+
+
+/* ITEMS SECTION*/
+
+#items-view {
+  background-color: #bbe4e9;
+  padding: 20px;
+  border: 5px solid #ccc;
+  border-radius: 20px;
+  display: flex;           
+  flex-wrap: wrap;         
+  gap: 10px;
+  justify-content: center;
+}
+
+.item {
+  flex: 1 1 300px;           
+  max-width: 350px;         
+  min-width: 200px;
+  background-color: #79c2d0;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px;
 }
 
 /* HIDDEN ELEMENTS */
