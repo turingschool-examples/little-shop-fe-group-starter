@@ -65,6 +65,31 @@ nav > button {
   background-color: white;
 }
 
+nav > button:hover,
+.submit:hover,
+.delete-merchant:hover,
+.add-new-button:hover,
+.discard-merchant-edits:hover,
+.submit-merchant-edits:hover,
+.edit-merchant:hover,
+.view-merchant-items:hover {
+  animation: pulse 1s infinite;
+  background-color: #ff9966; /* New background color */
+  color: #ffffff; /* Optional: Change text color */
+}
+
+.item:hover,
+.merchant:hover
+{
+  background-color: #ff9966; /* New background color */
+}
+
+aside, header, .item, main {
+  border-radius: 20px;
+}
+
+
+
 /* MAIN */
 
 main {
