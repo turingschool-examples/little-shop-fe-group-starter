@@ -113,6 +113,12 @@ function discardMerchantEdits(event) {
 function submitMerchant(event) {
   event.preventDefault()
   var merchantName = newMerchantName.value
+  
+  if (!merchantName.trim()) {
+    showStatus('Please enter a name', false);
+    return;
+  }
+  
   postData('merchants', { name: merchantName })
     .then(postedMerchant => {
       merchants.push(postedMerchant.data)
