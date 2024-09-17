@@ -1,7 +1,12 @@
 /* GENERAL */
  
 * {
-  font-family: sans-serif;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto; /* This allows vertical scrolling */
 }
 
 body, html {
@@ -21,15 +26,31 @@ aside {
 }
 
 header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
   text-align: center;
   margin: 10px 10px 80px 10px;
   background-color: black;
   color: white;
+  font-weight: 900;
   padding: 15px;
+  background-color: transparent;
+}
+
+.logo {
+  height: 5rem;
+}
+.title-container{
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
   font-size: 2.5em;
+  font-family: "Rubik";
+  font-style:italic
 }
 
 h1, 
@@ -53,6 +74,16 @@ nav > button {
   padding: 20px;
 }
 
+#items-nav {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+#merchants-nav {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
 .active-nav {
   background-color: white;
 }
@@ -60,9 +91,11 @@ nav > button {
 /* MAIN */
 
 main {
+  margin-top: 30px;
   padding: 10px;
   width: 75%;
   background-color: white;
+  border-radius: 10px;
 }
 
 form {
@@ -72,9 +105,10 @@ form {
 .item,
 .merchant {
   display: flex;
-  background-color: lightgray;
+  background-color: #f7f9fc;
   margin: 10px;
   padding: 5px;
+  border-radius: 5px;
 }
 
 .item {
@@ -127,4 +161,53 @@ form {
   display: none;
 } 
   
-co
+/* Added CSS */
+body {
+  background: linear-gradient(to bottom, #91267c, #f39c12, #00bfff);
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+button{
+  border-radius: 15px;
+  
+}
+
+button {
+  background-color: white;
+  border-radius: 100px;
+
+  color: black; 
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+main button{
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -25px 18px -14px inset, rgba(0, 0, 0, 0.15) 0 1px 2px, rgba(0, 0, 0, 0.15) 0 2px 4px, rgba(0, 0, 0, 0.15) 0 4px 8px, rgba(0, 0, 0, 0.15) 0 8px 16px, rgba(0, 0, 0, 0.15) 0 16px 32px;
+}
+main button:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0 -25px 18px -14px inset, rgba(0, 0, 0, 0.25) 0 1px 2px, rgba(0, 0, 0, 0.25) 0 2px 4px, rgba(0, 0, 0, 0.25) 0 4px 8px, rgba(0, 0, 0, 0.25) 0 8px 16px, rgba(0, 0, 0, 0.25) 0 16px 32px; 
+  transform: scale(1.05);
+}
