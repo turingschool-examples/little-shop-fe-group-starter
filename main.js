@@ -162,7 +162,7 @@ function displayItems(items) {
           <img src="" alt="">
           <h2>${item.attributes.name}</h2>
           <p>${item.attributes.description}</p>
-          <p>$${item.attributes.unit_price}</p>
+          <p class="item-price">$${item.attributes.unit_price}</p>
           <p class="merchant-name-in-item">Merchant: ${merchant}</p>
         </article>
     `
