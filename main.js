@@ -245,12 +245,18 @@ function filterByMerchant(merchantId) {
 filterByMerchant(1);
 
 function findMerchant(id) {
-  let foundMerchant;
+  const matchingMerchant = merchants.find((merchant) => {
+    return parseInt(merchant.id) === parseInt(id);
+    });
 
-  for (let i = 0; i < merchants.length; i++) {
-    if (parseInt(merchants[i].id) === parseInt(id)) {
-      foundMerchant = merchants[i]
-      return foundMerchant
-    }
+    //This if block below says that if no matching merchant is found it will return "No merchant found"
+    //Without this addition, the merchants items were not visible on the DOM.
+  if (matchingMerchant) {
+    return matchingMerchant;
+  } else {
+    return { attributes: {name: "No Merchant Found" }}; 
   }
 }
+  
+
+  
