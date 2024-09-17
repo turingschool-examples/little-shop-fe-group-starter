@@ -121,10 +121,12 @@ form {
   color: red;
 }
 
+.view {
+  display: flex;
+  flex-flow: row wrap;
+}
 /* HIDDEN ELEMENTS */
 
 .hidden {
   display: none;
 } 
-  
-co
