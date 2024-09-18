@@ -81,6 +81,8 @@ form {
   width: 30%;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  border-radius: 4%;
 }
 
 .merchant {
@@ -121,10 +123,17 @@ form {
   color: red;
 }
 
+.view {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.item-price {
+  font-size: larger;
+  font-weight: bold;
+}
 /* HIDDEN ELEMENTS */
 
 .hidden {
   display: none;
 } 
-  
-co
