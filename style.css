@@ -1,11 +1,11 @@
 /* GENERAL */
  
 * {
-  font-family: sans-serif;
+  font-family: -apple-system, "Helvetica Neue", sans-serif;
 }
 
 body, html {
-  background-color: gray;
+  background-color: #e9e7e7;
 }
 
 body {
@@ -21,20 +21,34 @@ aside {
 }
 
 header {
-  text-align: center;
-  margin: 10px 10px 80px 10px;
-  background-color: black;
-  color: white;
+  text-align: right;
+  margin: 10px 5px 30px 5px;
+  background-color: #192e3d;
+  color: #e9e7e7;
   padding: 15px;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#logo {
+  height: 75px;
+  border-radius: 50px;
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2em;
+  margin-top: 23px;
 }
 
-h1, 
-h2 {
-  margin: 0;
+h2{
+  font-size: 1.25em;
+  margin: 0px; 
+}
+h3{
+  color: #e9e7e7;
+  margin: 10px 336px;
+  text-align: center;
 }
 
 nav {
@@ -46,15 +60,18 @@ nav {
 nav > button {
   border: none;
   margin-bottom: 20px;
-  background-color: gray;
+  background-color:  #e9e7e7;
+  color: #192e3d;
   width: 65%;
   text-align: center;
   border-radius: 10px 0px 0px 10px;
   padding: 20px;
+  transition: width 0.5s ease-out;
 }
 
 .active-nav {
-  background-color: white;
+  background-color:  #192e3d;
+  color: #e9e7e7;
 }
 
 /* MAIN */
@@ -62,7 +79,7 @@ nav > button {
 main {
   padding: 10px;
   width: 75%;
-  background-color: white;
+  background-color: #192e3d;
 }
 
 form {
@@ -72,21 +89,39 @@ form {
 .item,
 .merchant {
   display: flex;
-  background-color: lightgray;
+  background-color: #6daccb;
+  border-radius: 5px;
+  border-bottom:2px solid #e9e7e7;
+  border-left:2px solid #e9e7e7;
   margin: 10px;
   padding: 5px;
 }
 
 .item {
-  width: 30%;
+  width: 220px;
+  height: 200px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 4%;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.item > p {
+  margin: 3px; 
+  color: #e9e7e7; 
+  font-size: 85%;
+}
+
+.item > h2 {
+  color: #192e3d;
+  flex-shrink: 1; 
+  max-height: 40%;
+  transition: color 0.2s ease-in-out; 
 }
 
 .merchant {
-  width: 98%;
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -95,6 +130,7 @@ form {
 .view-items-button {
   padding: 5px;
   margin-right: 10px;
+  
 }
 
 .merchant-name {
@@ -108,19 +144,59 @@ form {
 }
 
 .display-options > button {
-  margin-left: 15px;
+  margin: 15px;
+  border-radius: 5px;
 }
 
 .merchant-name-in-item {
   display: inline;
+  color: #192e3d !important;
+  font-weight: bold;
 }
 
 .success {
-  color: green;
+  color: #6daccb;
 }
 
 .fail {
-  color: red;
+  color: #d58c78;
+}
+
+.view {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.item-price {
+  font-size: larger;
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+  color : #192e3d;
+  background-color: #e9e7e7;
+  border-radius: 5px;
+  transition: background-color 0.5s ease-out
+}
+
+label {
+  color: #e9e7e7 ;
+  margin: 0px 10px;
+}
+/* Animations*/
+
+button:not(nav button):hover{
+  background-color: #fdcf56;
+}
+
+nav > button:hover {
+  width: 70%;
+}
+
+.item:hover h2 {
+  color: #e9e7e7;
 }
 
 .view {
