@@ -3,11 +3,12 @@ import {showStatus} from './errorHandling'
 // Your fetch requests will live here
 const base = 'http://localhost:3000/api/v1/'
 
-const checkForError = response => {
+const checkForError = async (response) => {
   if (response.ok) {
     return response.json();
   } else {
-    throw new Error();
+    const errorData = await response.json();
+    throw new Error(errorData.errors || 'Unknown error occurred');
   }
 }
 
@@ -16,7 +17,7 @@ function fetchData(endpoint) {
     .then(response => checkForError(response))  
     .catch(error => {
       console.log(error)
-      showStatus('Failed to fetch data. Try again later.', false)
+      showStatus(error, false)
     })
 }
 
@@ -31,7 +32,7 @@ function postData(endpoint, body) {
     .then(response => checkForError(response))  
     .catch(error => {
       console.log(error)
-      showStatus('Failed to create merchant. Try again later.', false)
+      showStatus(error, false)
     })
 }
 
@@ -66,7 +67,7 @@ function editData(endpoint, body) {
     .then(response => checkForError(response))  
     .catch(error => {
       console.log(error)
-      showStatus('Failed to edit merchant. Try again later.', false)
+      showStatus(error, false)
     })
 }
 
