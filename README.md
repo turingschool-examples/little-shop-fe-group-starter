@@ -30,7 +30,6 @@ Javascript:
 7. This front end application is built to consume data from an associated Rails API. This API must be open and running on localhost:3000.
 
 ## 👀 Preview of App
-<!-- ![Little Shop Home page](littleShopHome.png) -->
 <img src="LittleShopHome.png" alt="Little Shop Home Page" width="700" />
 
 ## 📝 Context

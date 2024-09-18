@@ -248,8 +248,6 @@ function filterByMerchant(merchantId) {
   return specificMerchantItems
 }
 
-filterByMerchant(1);
-
 function findMerchant(id) {
   const matchingMerchant = merchants.find((merchant) => {
     return parseInt(merchant.id) === parseInt(id);
