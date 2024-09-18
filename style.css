@@ -78,6 +78,18 @@ nav > button:hover,
   color: #ffffff; 
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .merchant:hover
 {
   background-color: #f6b696; 
@@ -86,8 +98,6 @@ nav > button:hover,
 aside, header, .item, main {
   border-radius: 20px;
 }
-
-
 
 /* MAIN */
 
@@ -135,29 +145,6 @@ form {
   border-radius: 20px;
   cursor: pointer;
 }
-
-.submit:active,
-.delete-merchant:active,
-.add-new-button:active,
-.discard-merchant-edits:active,
-.submit-merchant-edits:active,
-.edit-merchant:active,
-.view-merchant-items:active{
-  transform: scale(0.95);
-}
-
-.submit:hover,
-.delete-merchant:hover,
-.add-new-button:hover,
-.discard-merchant-edits:hover,
-.submit-merchant-edits:hover,
-.edit-merchant:hover,
-.view-merchant-items:hover{
-  border-color: rgb(179, 167, 255);
-  outline: 1px solid black;
-  outline-offset: 1px;
-}
-
 
 .merchant-name {
   padding-left: 10px;
@@ -215,5 +202,4 @@ form {
 .hidden {
   display: none;
 } 
-  
-/* co */
+

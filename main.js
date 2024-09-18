@@ -243,20 +243,15 @@ function addRemoveActiveNav(nav1, nav2) {
 function filterByMerchant(merchantId) {
   const specificMerchantItems = items.filter((item) => {
     return item.attributes.merchant_id === parseInt(merchantId)
-  });
+  })
 
   return specificMerchantItems
 }
 
-filterByMerchant(1);
-
 function findMerchant(id) {
   const matchingMerchant = merchants.find((merchant) => {
     return parseInt(merchant.id) === parseInt(id);
-    });
-
-    //This if block below says that if no matching merchant is found it will return "No merchant found"
-    //Without this addition, the merchants items were not visible on the DOM.
+    })
   if (matchingMerchant) {
     return matchingMerchant;
   } else {
