@@ -106,18 +106,19 @@ form {
   text-align: center;
   border-radius: 15px;
 }
+
 .item > p {
   margin: 3px; 
   color: #e9e7e7; 
   font-size: 85%;
 }
+
 .item > h2 {
   color: #192e3d;
   flex-shrink: 1; 
   max-height: 40%;
   transition: color 0.2s ease-in-out; 
 }
-
 
 .merchant {
   width: 100%;
@@ -198,6 +199,15 @@ nav > button:hover {
   color: #e9e7e7;
 }
 
+.view {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.item-price {
+  font-size: larger;
+  font-weight: bold;
+}
 /* HIDDEN ELEMENTS */
 
 .hidden {
