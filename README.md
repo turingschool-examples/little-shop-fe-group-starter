@@ -22,7 +22,7 @@ This FE application is build to consume the data from your Rails API.  In order 
 
 Follow the directions in the FE requirements portion of the Little Shop group project spec. When you are finished with the FE work, update this README to remove the current content and follow the template below.  
 
-______________________________________________________  
+ 
 # README Template  
 Before turning this project in, erase this line and everything above it and fill in the info below.  
 ______________________________________________________  

@@ -18,6 +18,7 @@ body {
 aside {
   width: 25%;
   margin: none;
+  background-image: url(https://cdn.abcotvs.com/dip/images/4537141_102218-kgo-billion-dollar-img.jpg);
 }
 
 header {
@@ -37,6 +38,11 @@ h2 {
   margin: 0;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+
 nav {
   display: flex;
   flex-direction: column;
@@ -51,6 +57,25 @@ nav > button {
   text-align: center;
   border-radius: 10px 0px 0px 10px;
   padding: 20px;
+}
+
+nav > button:hover,
+.submit:hover,
+.delete-merchant:hover,
+.add-new-button:hover,
+.discard-merchant-edits:hover,
+.submit-merchant-edits:hover,
+.edit-merchant:hover,
+.view-merchant-items:hover {
+  animation: pulse 1s infinite;
+  background-color: #1f4b6a; 
+  color: #ffffff; 
+}
+
+
+.merchant:hover {
+  background-color: #5f9dc9; 
+  color: #ffffff; 
 }
 
 .active-nav {
@@ -127,4 +152,20 @@ form {
   display: none;
 } 
   
-co
+nav > button:hover,
+.submit:hover,
+.delete-merchant:hover,
+.add-new-button:hover,
+.discard-merchant-edits:hover,
+.submit-merchant-edits:hover,
+.edit-merchant:hover,
+.view-merchant-items:hover {
+  animation: pulse 1s infinite;
+  background-color: #1373b7; 
+  color: #ffffff; 
+}
+
+#merchants-nav:hover {
+  background-color: #1373b7; /* New color when hovered */
+  color: #ffffff; /* Text color change for contrast */
+}
