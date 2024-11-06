@@ -9,11 +9,14 @@ const merchantsNavButton = document.querySelector("#merchants-nav")
 const itemsNavButton = document.querySelector("#items-nav")
 const addNewButton = document.querySelector("#add-new-button")
 const showingText = document.querySelector("#showing-text")
+const sortButton = document.querySelector("#sort-button")
 
 //Form elements
 const merchantForm = document.querySelector("#new-merchant-form")
 const newMerchantName = document.querySelector("#new-merchant-name")
+const itemForm = document.querySelector("#new-item-form")
 const submitMerchantButton = document.querySelector("#submit-merchant")
+const submitItemButton = document.querySelector("#submit-item")
 
 // Event Listeners
 merchantsView.addEventListener('click', (event) => {
@@ -24,12 +27,27 @@ merchantsNavButton.addEventListener('click', showMerchantsView)
 itemsNavButton.addEventListener('click', showItemsView)
 
 addNewButton.addEventListener('click', () => {
-  show([merchantForm])
+  if (addNewButton.dataset.state === 'merchant') {
+    show([merchantForm])
+    hide([itemForm])
+  }
+  else if (addNewButton.dataset.state === 'item') {
+    show([itemForm])
+    hide([merchantForm])
+  }
 })
 
 submitMerchantButton.addEventListener('click', (event) => {
   submitMerchant(event)
 })
+
+submitItemButton.addEventListener('click', (event) => {
+  submitItem(event)
+})
+
+sortButton.addEventListener('click', (event) => {
+  sortMerchants();
+});
 
 //Global variables
 let merchants;
@@ -67,7 +85,7 @@ function deleteMerchant(event) {
     .then(() => {
       let deletedMerchant = findMerchant(id)
       let indexOfMerchant = merchants.indexOf(deletedMerchant)
-      merchants.splice(indexOfMerchant, 1)
+      merchants.splice(indexOfMerchant, 1)  
       displayMerchants(merchants)
       showStatus('Success! Merchant removed!', true)
     })
@@ -123,6 +141,24 @@ function submitMerchant(event) {
     })
 }
 
+function submitItem(event) {
+  event.preventDefault()
+  var newItem = {
+    name: newItemName.value,
+    description: newItemDescription.value,
+    unit_price: parseFloat(newItemPrice.value)
+  }
+  postData('items', newItem)
+  .then(postedItem => {
+    items.push(postedItem.data)
+    displayAddedItem(postedItem.data)
+    newItemName.value = ''
+    newItemPrice.value = ''
+    showStatus('Success! Item added!', true)
+    hide([itemForm])
+  })
+}
+
 // Functions that control the view 
 function showMerchantsView() {
   showingText.innerText = "All Merchants"
@@ -137,8 +173,8 @@ function showItemsView() {
   showingText.innerText = "All Items"
   addRemoveActiveNav(itemsNavButton, merchantsNavButton)
   addNewButton.dataset.state = 'item'
-  show([itemsView])
-  hide([merchantsView, merchantForm, addNewButton])
+  show([itemsView, addNewButton])
+  hide([merchantsView, merchantForm, itemForm])
   displayItems(items)
 }
 
@@ -158,11 +194,10 @@ function displayItems(items) {
   firstHundredItems.forEach(item => {
     let merchant = findMerchant(item.attributes.merchant_id).attributes.name
     itemsView.innerHTML += `
-     <article class="item" id="item-${item.id}">
-          <img src="" alt="">
-          <h2>${item.attributes.name}</h2>
-          <p>${item.attributes.description}</p>
-          <p>$${item.attributes.unit_price}</p>
+        <article class="item" id="item-${item.id}">
+          <h2 class="item-name">${item.attributes.name}</h2>
+          <p class="item-description">${item.attributes.description}</p>
+          <p class="item-price">$${item.attributes.unit_price}</p>
           <p class="merchant-name-in-item">Merchant: ${merchant}</p>
         </article>
     `
@@ -235,24 +270,25 @@ function addRemoveActiveNav(nav1, nav2) {
 }
 
 function filterByMerchant(merchantId) {
-  const specificMerchantItems = []
-
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].attributes.merchant_id === parseInt(merchantId)) {
-      specificMerchantItems.push(items[i])
-    }
-  }
-
-  return specificMerchantItems
+  return items.filter(item => item.attributes.merchant_id === parseInt(merchantId))
 }
 
 function findMerchant(id) {
-  let foundMerchant;
+  return merchants.find(merchant => parseInt(merchant.id) === parseInt(id))
+}
 
-  for (let i = 0; i < merchants.length; i++) {
-    if (parseInt(merchants[i].id) === parseInt(id)) {
-      foundMerchant = merchants[i]
-      return foundMerchant
+function sortMerchants() {
+  merchants.sort((a, b) => {
+    let nameA = a.attributes.name;
+    let nameB = b.attributes.name;
+    if (nameA < nameB) {
+      return -1;
     }
-  }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  });
+
+  displayMerchants(merchants);
 }
