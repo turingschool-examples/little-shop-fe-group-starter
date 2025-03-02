@@ -1,5 +1,5 @@
 /* GENERAL */
- 
+
 * {
   font-family: sans-serif;
 }
@@ -11,6 +11,12 @@ body, html {
 body {
   display: flex;
   margin: 0px;
+}
+
+button:hover {
+  background-color: aqua;
+  font-size: 15px;
+  cursor: pointer
 }
 
 /* SIDEBAR */
@@ -53,11 +59,41 @@ nav > button {
   padding: 20px;
 }
 
+#merchants-nav:hover,
+#items-nav:hover {
+  animation: bubble 0.4s ease-in-out
+}
+@keyframes bubble {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
 .active-nav {
   background-color: white;
 }
 
 /* MAIN */
+
+
+#items-view {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* align-content: center; */
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+ {
+
+}
 
 main {
   padding: 10px;
@@ -72,15 +108,19 @@ form {
 .item,
 .merchant {
   display: flex;
-  background-color: lightgray;
   margin: 10px;
-  padding: 5px;
+  padding: 10px;
+  border: outset;
 }
 
 .item {
   width: 30%;
   flex-direction: column;
   justify-content: center;
+  background-color: aquamarine;
+  border: outset;
+  border-radius: 5%;
+  border-color: deeppink;
 }
 
 .merchant {
