@@ -1,7 +1,7 @@
 /* GENERAL */
  
 * {
-  font-family: sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 body, html {
@@ -9,8 +9,23 @@ body, html {
 }
 
 body {
+  background: linear-gradient(to right, #b9b9b9, #fef7f2);
+  padding: 20px;
   display: flex;
-  margin: 0px;
+  justify-content: center;
+  align-items: flex-start;
+  
+}
+
+button {
+  cursor: pointer;
+  
+}
+
+button:hover {
+  background-color: #0558fe; 
+  color: white; 
+  transform: scale(1.10); 
 }
 
 /* SIDEBAR */
@@ -23,9 +38,11 @@ aside {
 header {
   text-align: center;
   margin: 10px 10px 80px 10px;
-  background-color: black;
+  background-color: #fdc600;
   color: white;
   padding: 15px;
+  box-shadow: 0px 7px 25px rgba(0, 0, 0, 1);
+  border-radius: 15px;
 }
 
 h1 {
@@ -37,6 +54,7 @@ h2 {
   margin: 0;
 }
 
+
 nav {
   display: flex;
   flex-direction: column;
@@ -47,22 +65,27 @@ nav > button {
   border: none;
   margin-bottom: 20px;
   background-color: gray;
+  color: white;
   width: 65%;
   text-align: center;
-  border-radius: 10px 0px 0px 10px;
-  padding: 20px;
+  border-radius: 10px
+ 
 }
 
 .active-nav {
-  background-color: white;
+  color: rgb(101, 98, 96);
+  background-color: #ffd000;
 }
 
 /* MAIN */
 
 main {
-  padding: 10px;
-  width: 75%;
-  background-color: white;
+  width: 100%;
+  max-width: 800px; 
+  display: flex;
+  flex-wrap: wrap;  
+  justify-content: space-evenly;  
+  gap: 20px;
 }
 
 form {
@@ -72,15 +95,24 @@ form {
 .item,
 .merchant {
   display: flex;
-  background-color: lightgray;
+  background-color: #0558fe;
+  color: white;
   margin: 10px;
-  padding: 5px;
+  padding: 10px;
+  border-radius: 15px;
 }
 
 .item {
-  width: 30%;
-  flex-direction: column;
-  justify-content: center;
+  display: inline-flex;
+  flex-direction: column;   
+  align-items: center;         
+  padding: 15px;
+  background-color: #0558fe;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
+  width: 300px;
+  height: 275px;                
+      
 }
 
 .merchant {
@@ -103,6 +135,7 @@ form {
 .display-options {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .display-options > button {
@@ -127,4 +160,3 @@ form {
   display: none;
 } 
   
-co

@@ -153,21 +153,34 @@ function showMerchantItemsView(id, items) {
 
 // Functions that add data to the DOM
 function displayItems(items) {
-  itemsView.innerHTML = ''
-  let firstHundredItems = items.slice(0, 99)
-  firstHundredItems.forEach(item => {
-    let merchant = findMerchant(item.attributes.merchant_id).attributes.name
-    itemsView.innerHTML += `
-     <article class="item" id="item-${item.id}">
+  itemsView.innerHTML = '' // Clear items view
+
+  if (items.length === 0) {
+    
+    itemsView.innerHTML = `
+      <div class="no-items-message">
+        No Items Yet For This Merchant
+      </div>
+    `
+  } else {
+    // Display items normally
+    let firstHundredItems = items.slice(0, 99)
+    firstHundredItems.forEach(item => {
+      let merchant = findMerchant(item.attributes.merchant_id).attributes.name
+      itemsView.innerHTML += `
+        <article class="item" id="item-${item.id}">
           <img src="" alt="">
           <h2>${item.attributes.name}</h2>
           <p>${item.attributes.description}</p>
           <p>$${item.attributes.unit_price}</p>
           <p class="merchant-name-in-item">Merchant: ${merchant}</p>
         </article>
-    `
-  })
+      `
+    })
+  }
 }
+
+
 
 function displayMerchants(merchants) {
     merchantsView.innerHTML = ''
@@ -213,6 +226,8 @@ function displayAddedMerchant(merchant) {
 function displayMerchantItems(event) {
   let merchantId = event.target.closest("article").id.split('-')[1]
   const filteredMerchantItems = filterByMerchant(merchantId)
+  
+  // Call displayItems to show the items, or the "No Items" message if the array is empty
   showMerchantItemsView(merchantId, filteredMerchantItems)
 }
 
@@ -235,24 +250,12 @@ function addRemoveActiveNav(nav1, nav2) {
 }
 
 function filterByMerchant(merchantId) {
-  const specificMerchantItems = []
-
-  for (let i = 0; i < items.length; i++) {
-    if (items[i].attributes.merchant_id === parseInt(merchantId)) {
-      specificMerchantItems.push(items[i])
-    }
-  }
-
-  return specificMerchantItems
+  return items.filter(item => item.attributes.merchant_id === parseInt(merchantId));
 }
 
-function findMerchant(id) {
-  let foundMerchant;
 
-  for (let i = 0; i < merchants.length; i++) {
-    if (parseInt(merchants[i].id) === parseInt(id)) {
-      foundMerchant = merchants[i]
-      return foundMerchant
-    }
-  }
+
+
+function findMerchant(id) {
+  return merchants.find(merchant => parseInt(merchant.id) === parseInt(id));
 }
