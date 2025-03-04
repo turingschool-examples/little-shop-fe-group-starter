@@ -24,7 +24,7 @@ header {
   text-align: center;
   margin: 10px 10px 80px 10px;
   background-color: black;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 15px;
 }
 
@@ -51,6 +51,11 @@ nav > button {
   text-align: center;
   border-radius: 10px 0px 0px 10px;
   padding: 20px;
+}
+
+/* added button show pointer cursor change */
+button {
+  cursor: pointer;
 }
 
 .active-nav {
@@ -121,10 +126,14 @@ form {
   color: red;
 }
 
+#items-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /* HIDDEN ELEMENTS */
 
 .hidden {
   display: none;
-} 
-  
-co
+}
