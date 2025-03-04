@@ -103,6 +103,7 @@ form {
 .display-options {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .display-options > button {
@@ -127,4 +128,3 @@ form {
   display: none;
 } 
   
-co

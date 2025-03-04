@@ -235,7 +235,14 @@ function addRemoveActiveNav(nav1, nav2) {
 }
 
 function filterByMerchant(merchantId) {
-  const specificMerchantItems = []
+  let specificMerchantItems = items.filter((single_item) => {
+    return single_item.attributes.merchant_id === parseInt(merchantId)
+  })
+
+  return specificMerchantItems
+  
+  /*
+  let specificMerchantItems = []
 
   for (let i = 0; i < items.length; i++) {
     if (items[i].attributes.merchant_id === parseInt(merchantId)) {
@@ -244,9 +251,15 @@ function filterByMerchant(merchantId) {
   }
 
   return specificMerchantItems
+  */
 }
 
 function findMerchant(id) {
+  let foundMerchant = merchants.find((merchant) => {return parseInt(merchant.id) === parseInt(id)})
+
+  return foundMerchant
+
+  /*
   let foundMerchant;
 
   for (let i = 0; i < merchants.length; i++) {
@@ -255,4 +268,5 @@ function findMerchant(id) {
       return foundMerchant
     }
   }
+  */
 }
